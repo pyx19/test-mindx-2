@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html id="nut" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            width: 100%;
+            height: 600px;
+        }
+        #all {
+            width: 100%;
+            height: 100%;
+            
+            text-align: center;
+        }
+        #button, #another{
+            border-radius: 10px;
+            cursor: pointer;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="all">
+        <button id="button">copy hex code</button>
+        <a href="" ><button id="another">not the one you need?</button> </a>
+    </div>
+     
+     <script>
+         var arr = [1,2,3,4,5,6,7,8,9,0,"a",'b','c','d','e','f'];
+         var random = '#';
+         for (i=0;i<6;i++) {
+             random += arr[Math.floor(Math.random()*16)]
+         }
+         var all = document.getElementById("all");
+         var button = document.getElementById("button");
+         all.style.backgroundColor = random;
+         button.onclick = function() {
+            var arr = [1,2,3,4,5,6,7,8,9,0,"a",'b','c','d','e','f'];
+            var random = '#';
+            for (i=0;i<6;i++) {
+                random += arr[Math.floor(Math.random()*16)]
+            }
+            navigator.clipboard.writeText(random);
+            alert("Đã copy màu " + random);
+         } 
+            
+         
+     </script>
+</body>
+</html>
